@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Demolition Services | Laser Level Dirt Works | Arkansas River Valley</title>
+  <meta name="description" content="Licensed & insured demolition contractor serving the Arkansas River Valley. Commercial, residential, concrete breaking & debris removal. Free estimates. Call (479) 223-1168." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:       #111111;
+      --dark-mid:   #1c1c1c;
+      --dark-steel: #2a2a2a;
+      --brand:      #8c3135;
+      --brand-dark: #6e2528;
+      --gray-light: #f4f4f4;
+      --gray-mid:   #b8bec6;
+      --white:      #ffffff;
+      --text-dark:  #1a1a1a;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Barlow', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── SITE HEADER ─── */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 28px;
+      border-bottom: 2px solid var(--brand);
+      min-height: 66px;
+    }
+
+    .header-logo {
+      position: absolute;
+      left: 28px;
+      height: 44px;
+      width: auto;
+    }
+
+    .header-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+      text-align: center;
+    }
+
+    .header-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .header-phone {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: var(--brand);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .header-phone:hover { color: var(--brand-dark); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 66px;
+      background: var(--dark);
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.52;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(10,10,10,0.68) 0%,
+        rgba(10,10,10,0.38) 60%,
+        rgba(140,49,53,0.12) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-texture {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+      line-height: 1.0;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 22px;
+      white-space: nowrap;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--brand);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--gray-mid);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      font-weight: 500;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 36px;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.45);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 80px 24px; }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    .section-title.light { color: var(--white); }
+
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    /* ─── STRIP BAR ─── */
+    .strip {
+      background: var(--dark-steel);
+      padding: 18px 24px;
+    }
+
+    .strip-inner {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .strip-item {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .strip-item::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--gray-light); }
+
+    .services-header { margin-bottom: 48px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 32px 28px;
+      border-top: 4px solid transparent;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .service-card:hover {
+      border-top-color: var(--brand);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      z-index: 1;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* ─── MIDDLE FEATURE SECTION ─── */
+    .feature-split {
+      padding: 0;
+      background: var(--dark);
+    }
+
+    .feature-split-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+
+    .feature-photo {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .feature-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .feature-info {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .feature-info .section-label { color: var(--brand); }
+
+    .feature-info h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--white);
+    }
+
+    .feature-info p {
+      font-size: 0.97rem;
+      color: var(--gray-mid);
+      line-height: 1.7;
+    }
+
+    .feature-info ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feature-info ul li {
+      font-size: 0.93rem;
+      color: var(--gray-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .feature-info ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ─── WHY US ─── */
+    .why-us { background: var(--dark); }
+
+    .why-header { margin-bottom: 48px; }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .trust-number {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 3rem;
+      color: var(--brand);
+      line-height: 1;
+    }
+
+    .trust-item h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+
+    .trust-item p {
+      font-size: 0.9rem;
+      color: var(--gray-mid);
+      line-height: 1.55;
+    }
+
+    .why-divider {
+      width: 40px;
+      height: 3px;
+      background: var(--brand);
+      margin-bottom: 8px;
+    }
+
+    /* ─── SERVICE AREAS ─── */
+    .areas { background: var(--white); }
+
+    .areas-header { margin-bottom: 40px; }
+
+    .areas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .area-chip {
+      background: var(--gray-light);
+      border: 1px solid #dde3ea;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      padding: 8px 18px;
+      border-radius: 2px;
+      color: var(--dark);
+    }
+
+    .areas-note {
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--dark-mid); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info { color: var(--white); }
+
+    .contact-info h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .contact-info > p {
+      color: var(--gray-mid);
+      margin-bottom: 32px;
+      font-size: 0.98rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .contact-line-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .contact-line-value {
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+
+    .contact-phone-big {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--brand);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .contact-phone-big:hover { text-decoration: underline; }
+
+    /* ─── FORM ─── */
+    .quote-form {
+      background: var(--white);
+      padding: 40px 36px;
+      border-radius: 4px;
+    }
+
+    .quote-form h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .quote-form > p {
+      font-size: 0.88rem;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      border: 2px solid #dde3ea;
+      border-radius: 3px;
+      padding: 12px 14px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      width: 100%;
+      transition: border-color 0.2s;
+      background: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--brand);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--brand);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--brand-dark); }
+
+    /* ─── PHOTO GALLERY ─── */
+    .gallery { background: var(--gray-light); padding-bottom: 80px; }
+
+    .gallery-header { margin-bottom: 40px; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .gallery-item {
+      background: #ccc;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 130px;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1) opacity(0.65);
+    }
+
+    .footer-info {
+      font-size: 0.88rem;
+      color: var(--gray-mid);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .footer-phone {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--brand);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-copy {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: #444;
+    }
+
+    /* ─── MOBILE STICKY CTA ─── */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      background: var(--brand);
+      padding: 14px 20px;
+      text-align: center;
+    }
+
+    .mobile-cta-bar a {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      section { padding: 60px 20px; }
+
+      .site-header { padding: 8px 16px; min-height: 58px; }
+      .header-logo { left: 16px; height: 34px; }
+      .header-phone { font-size: 1.05rem; }
+
+      .feature-split-inner { grid-template-columns: 1fr; }
+      .feature-photo { height: 280px; }
+      .feature-info { padding: 40px 28px; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .trust-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .mobile-cta-bar { display: block; }
+
+      body { padding-bottom: 60px; }
+
+      .quote-form { padding: 28px 20px; }
+
+      .hero-content { padding: 60px 20px 80px; }
+
+      .hero h1 { white-space: normal; font-size: clamp(2rem, 8vw, 3rem); }
+    }
+
+    @media (max-width: 480px) {
+      .trust-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.6s ease 0.1s both; }
+    .hero h1      { animation: fadeUp 0.6s ease 0.22s both; }
+    .hero-sub     { animation: fadeUp 0.6s ease 0.34s both; }
+    .hero-ctas    { animation: fadeUp 0.6s ease 0.46s both; }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <img src="assets/logo transparent background.png" alt="Laser Level Dirt Works" class="header-logo" />
+    <div class="header-center">
+      <span class="header-label">Free Estimates — Call Now</span>
+      <a href="tel:4792231168" class="header-phone">(479) 223-1168</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/LL Clips Clip 59.mov" type="video/mp4" />
+      <source src="assets/LL Clips Clip 9.mov" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-texture"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Arkansas River Valley's Trusted Demolition Contractor</p>
+      <h1>Expert <em>Demolition</em><br />River Valley, AR</h1>
+      <p class="hero-sub">Safe, efficient commercial and residential demolition with concrete breaking, debris removal, and full site cleanup.</p>
+      <div class="hero-ctas">
+        <a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a>
+        <a href="#quote" class="btn-secondary">Get a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="strip-inner">
+      <span class="strip-item">Free Estimates</span>
+      <span class="strip-item">Licensed &amp; Insured</span>
+      <span class="strip-item">Owner Operated</span>
+      <span class="strip-item">Laser-Guided Equipment</span>
+      <span class="strip-item">Cleanup Included</span>
+      <span class="strip-item">10+ Years Experience</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <div class="services-header">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Demolition Services<br />We Offer</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Demolition</h3>
+          <p>Full-scale commercial building takedowns handled with precision planning, site safety, and minimal disruption to surrounding businesses.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Residential Demolition</h3>
+          <p>Safe removal of homes, garages, outbuildings, and structures — whether clearing a lot or making way for new construction.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔨</div>
+          <h3>Concrete Breaking</h3>
+          <p>Driveways, slabs, foundations, sidewalks — we break and remove concrete efficiently with the right equipment for every job.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏗️</div>
+          <h3>Structure Removal</h3>
+          <p>Clearing existing structures to make room for new construction or expansion — done right so your project can move forward.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚛</div>
+          <h3>Debris Removal &amp; Cleanup</h3>
+          <p>We don't just knock it down — we haul it away. Every job includes thorough debris removal and site cleanup.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">♻️</div>
+          <h3>Responsible Disposal</h3>
+          <p>Environmentally responsible handling of demolished materials, including recycling when possible, to reduce landfill impact.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚠️</div>
+          <h3>Precision Around Utilities</h3>
+          <p>Careful, coordinated work around neighboring structures, utility lines, and existing infrastructure to protect what stays standing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE SPLIT: PHOTO + INFO -->
+  <div class="feature-split">
+    <div class="feature-split-inner">
+      <div class="feature-photo">
+        <img
+          src="https://images.unsplash.com/photo-1616551569669-b60598758c4f?auto=format&fit=crop&w=900&q=80"
+          alt="Excavator on demolition site"
+        />
+      </div>
+      <div class="feature-info">
+        <p class="section-label">Owner-Operated Quality</p>
+        <h2>The Owner Is On<br />Every Job.</h2>
+        <p>When you hire Laser Level Dirt Works, you get more than a crew — you get the owner on site, personally overseeing every step of the work. That means higher standards, direct communication, and real accountability from start to finish.</p>
+        <ul>
+          <li>State-of-the-art laser-guided equipment on every project</li>
+          <li>Precision demolition that protects surrounding structures</li>
+          <li>Debris hauled away and site left clean — always</li>
+          <li>Over a decade of experience in the River Valley</li>
+        </ul>
+        <div>
+          <a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-header">
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title light">Built on Trust.<br />Backed by Experience.</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-number">10+</div>
+          <div class="why-divider"></div>
+          <h3>Years of Experience</h3>
+          <p>Over a decade serving the Arkansas River Valley with quality excavation and demolition work.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">✓</div>
+          <div class="why-divider"></div>
+          <h3>Licensed &amp; Insured</h3>
+          <p>Fully licensed and insured for your protection on every commercial and residential project.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">①</div>
+          <div class="why-divider"></div>
+          <h3>Owner Operated</h3>
+          <p>The owner is on every job — that means higher standards, direct communication, and real accountability.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">$0</div>
+          <div class="why-divider"></div>
+          <h3>Free Estimates</h3>
+          <p>No cost, no obligation to get a quote. Call or submit a form and we'll get back to you fast.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">⟁</div>
+          <div class="why-divider"></div>
+          <h3>Laser-Guided Equipment</h3>
+          <p>State-of-the-art laser-guided machinery delivers precision and efficiency that outdated equipment can't match.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">✔</div>
+          <div class="why-divider"></div>
+          <h3>Cleanup Included</h3>
+          <p>We leave your site clean and ready. Debris hauling and site cleanup come standard with every demolition job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="areas">
+    <div class="container">
+      <div class="areas-header">
+        <p class="section-label">Where We Work</p>
+        <h2 class="section-title">Serving the Arkansas<br />River Valley &amp; Beyond</h2>
+      </div>
+      <div class="areas-grid">
+        <span class="area-chip">Russellville</span>
+        <span class="area-chip">Little Rock</span>
+        <span class="area-chip">Conway</span>
+        <span class="area-chip">Morrilton</span>
+        <span class="area-chip">Clarksville</span>
+        <span class="area-chip">Van Buren</span>
+        <span class="area-chip">Fort Smith</span>
+        <span class="area-chip">Dardanelle</span>
+        <span class="area-chip">Paris</span>
+        <span class="area-chip">Ozark</span>
+        <span class="area-chip">Booneville</span>
+        <span class="area-chip">Atkins</span>
+        <span class="area-chip">London</span>
+        <span class="area-chip">Dover</span>
+        <span class="area-chip">Perryville</span>
+        <span class="area-chip">Knoxville</span>
+      </div>
+      <p class="areas-note">Don't see your city? <strong>Call us</strong> — we serve surrounding areas throughout the River Valley.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT / QUOTE FORM -->
+  <section class="contact" id="quote">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <h2>Get Your<br />Free Estimate</h2>
+          <p>Ready to get started? Call us directly or fill out the form and we'll reach out to discuss your demolition project — no obligation, no pressure.</p>
+          <div class="contact-detail">
+            <div class="contact-line">
+              <span class="contact-line-label">Phone</span>
+              <a class="contact-phone-big" href="tel:4792231168">(479) 223-1168</a>
+            </div>
+            <div class="contact-line">
+              <span class="contact-line-label">Address</span>
+              <span class="contact-line-value">2810 S Arkansas Ave<br />Russellville, AR 72802</span>
+            </div>
+            <div class="contact-line">
+              <span class="contact-line-label">Hours</span>
+              <span class="contact-line-value">Monday – Friday: 8:00am – 5:00pm<br />Saturday – Sunday: Closed</span>
+            </div>
+          </div>
+          <a href="tel:4792231168" class="btn-primary">Call Now — Free Estimate</a>
+        </div>
+
+        <div class="quote-form">
+          <h3>Request a Quote</h3>
+          <p>We'll respond within one business day.</p>
+          <form>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(479) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Commercial Demolition</option>
+                <option>Residential Demolition</option>
+                <option>Concrete Breaking</option>
+                <option>Structure Removal</option>
+                <option>Debris Removal &amp; Cleanup</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project — location, scope, timeline, any questions..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Submit — Get My Free Estimate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery-header">
+        <p class="section-label">Our Work</p>
+        <h2 class="section-title">Project Photos</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/photo 1.png" alt="Laser Level Dirt Works project" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/photo 2.png" alt="Laser Level Dirt Works project" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/photo 3.png" alt="Laser Level Dirt Works project" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="assets/logo transparent background.png" alt="Laser Level Dirt Works" class="footer-logo" />
+    <div class="footer-info">
+      2810 S Arkansas Ave, Russellville, AR 72802<br />
+      Mon – Fri: 8:00am – 5:00pm &nbsp;|&nbsp; Sat – Sun: Closed
+    </div>
+    <a class="footer-phone" href="tel:4792231168">(479) 223-1168</a>
+    <div class="footer-copy">
+      &copy; 2025 Laser Level Dirt Works. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta-bar">
+    <a href="tel:4792231168">Call Now — Free Estimate: (479) 223-1168</a>
+  </div>
+
+</body>
+</html>
