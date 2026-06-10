@@ -722,9 +722,18 @@
 
       .quote-form { padding: 28px 20px; }
 
-      .hero-content { padding: 60px 20px 80px; }
+      .hero-content { padding: 40px 20px 28px; }
 
-      .hero h1 { white-space: normal; font-size: clamp(2rem, 8vw, 3rem); }
+      .hero h1 { white-space: normal; font-size: 2.4rem; }
+
+      .strip-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 12px;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .strip-item { justify-content: flex-start; }
     }
 
     @media (max-width: 480px) {
