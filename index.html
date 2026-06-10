@@ -84,6 +84,78 @@
     }
     .header-phone:hover { color: var(--brand-dark); }
 
+    /* ─── HAMBURGER BUTTON ─── */
+    .hamburger {
+      display: none;
+      position: absolute;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE NAV DROPDOWN ─── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 66px;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      background: var(--white);
+      border-bottom: 2px solid var(--brand);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .mobile-nav.open { max-height: 320px; }
+
+    .mobile-nav a {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 16px 24px;
+      border-bottom: 1px solid #eee;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { background: var(--gray-light); color: var(--brand); }
+
+    .mobile-nav a.nav-cta {
+      background: var(--brand);
+      color: var(--white);
+      text-align: center;
+    }
+    .mobile-nav a.nav-cta:hover { background: var(--brand-dark); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+    }
+
     /* ─── HERO ─── */
     .hero {
       position: relative;
@@ -763,7 +835,18 @@
       <span class="header-label">Free Estimates — Call Now</span>
       <a href="tel:4792231168" class="header-phone">(479) 223-1168</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#services">Services</a>
+    <a href="#why-us">Why Choose Us</a>
+    <a href="#areas">Service Areas</a>
+    <a href="#quote" class="nav-cta">Get a Free Estimate</a>
+  </nav>
 
   <!-- HERO -->
   <section class="hero">
@@ -797,7 +880,7 @@
   </div>
 
   <!-- SERVICES -->
-  <section class="services">
+  <section class="services" id="services">
     <div class="container">
       <div class="services-header">
         <p class="section-label">What We Do</p>
@@ -870,7 +953,7 @@
   </div>
 
   <!-- WHY US -->
-  <section class="why-us">
+  <section class="why-us" id="why-us">
     <div class="container">
       <div class="why-header">
         <p class="section-label">Why Choose Us</p>
@@ -918,7 +1001,7 @@
   </section>
 
   <!-- SERVICE AREAS -->
-  <section class="areas">
+  <section class="areas" id="areas">
     <div class="container">
       <div class="areas-header">
         <p class="section-label">Where We Work</p>
@@ -1042,6 +1125,24 @@
       &copy; 2025 Laser Level Dirt Works. All rights reserved.
     </div>
   </footer>
+
+  <!-- MOBILE NAV JS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  </script>
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-cta-bar">
