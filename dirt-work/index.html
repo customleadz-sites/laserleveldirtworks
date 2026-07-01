@@ -30,8 +30,8 @@
       --dark:       #111111;
       --dark-mid:   #1c1c1c;
       --dark-steel: #2a2a2a;
-      --brand:      #b71c22;
-      --brand-dark: #8c3135;
+      --brand:      #872B33;
+      --brand-dark: #5f1e24;
       --gray-light: #f4f4f4;
       --gray-mid:   #b8bec6;
       --white:      #ffffff;
@@ -87,8 +87,8 @@
     /* laser scan line accent — nods to the "Laser Level" name */
     .hero-laser {
       position: absolute; left: 0; right: 0; top: 58%; height: 2px; z-index: 2;
-      background: linear-gradient(90deg, transparent, rgba(255,50,55,0) 8%, #ff3237 50%, rgba(255,50,55,0) 92%, transparent);
-      box-shadow: 0 0 18px 2px rgba(255,50,55,0.55);
+      background: linear-gradient(90deg, transparent, rgba(181,85,93,0) 8%, #b5555d 50%, rgba(181,85,93,0) 92%, transparent);
+      box-shadow: 0 0 18px 2px rgba(135,43,51,0.5);
       animation: laserSweep 6s ease-in-out infinite;
     }
     @keyframes laserSweep {
@@ -105,11 +105,11 @@
     }
     .hero-eyebrow {
       font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
-      letter-spacing: 0.2em; text-transform: uppercase; color: #ff5a5f; margin-bottom: 16px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #c07680; margin-bottom: 16px;
     }
     .hero h1 {
-      font-family: var(--font-display); font-weight: 900;
-      font-size: clamp(2.4rem, 6vw, 5rem); line-height: 0.98; color: var(--white);
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.0; color: var(--white);
       text-transform: uppercase; letter-spacing: 0.005em; margin-bottom: 20px;
     }
     .hero h1 em { font-style: normal; color: var(--brand); }
@@ -142,7 +142,7 @@
       letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px;
     }
     .section-title {
-      font-family: var(--font-display); font-weight: 900; font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 3rem);
       line-height: 1.05; text-transform: uppercase; color: var(--dark);
     }
     .section-title.light { color: var(--white); }
@@ -165,7 +165,7 @@
     .feature-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .feature-info { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
     .feature-info h2 {
-      font-family: var(--font-display); font-weight: 900; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       text-transform: uppercase; line-height: 1.05; color: var(--white);
     }
     .feature-info p { font-size: 0.97rem; color: var(--gray-mid); line-height: 1.7; }
@@ -180,21 +180,40 @@
     /* ─── SERVICES ─── */
     .services { background: var(--gray-light); }
     .services-header { margin-bottom: 48px; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
     .service-card {
-      background: var(--white); padding: 32px 28px; border-top: 4px solid transparent;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; position: relative;
+      background: var(--white); border-radius: 8px; overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s; position: relative;
     }
-    .service-card:hover {
-      border-top-color: var(--brand); transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12); z-index: 1;
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 46px rgba(0,0,0,0.16); z-index: 1; }
+    .service-thumb { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #ddd; }
+    .service-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .service-card:hover .service-thumb img { transform: scale(1.06); }
+    .service-thumb::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(17,17,17,0.38), rgba(17,17,17,0) 55%);
     }
-    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-icon {
+      position: absolute; left: 16px; bottom: 14px; z-index: 2;
+      width: 46px; height: 46px; border-radius: 8px;
+      background: var(--brand); font-size: 1.45rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.28);
+    }
+    .service-body { padding: 26px 26px 30px; display: flex; flex-direction: column; gap: 12px; }
     .service-card h3 {
-      font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;
-      text-transform: uppercase; letter-spacing: 0.04em; color: var(--dark); margin-bottom: 10px;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.38rem;
+      text-transform: uppercase; letter-spacing: 0.03em; color: var(--dark); line-height: 1.05;
     }
-    .service-card p { font-size: 0.92rem; color: #555; line-height: 1.55; }
+    .service-card p { font-size: 0.96rem; color: #555; line-height: 1.6; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 2px; }
+    .service-tag {
+      font-family: var(--font-display); font-weight: 600; font-size: 0.72rem;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-dark);
+      background: rgba(135,43,51,0.09); padding: 4px 10px; border-radius: 3px;
+    }
 
     /* ─── MATERIALS ─── */
     .materials { background: var(--dark); }
@@ -248,7 +267,7 @@
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .contact-info { color: var(--white); }
     .contact-info h2 {
-      font-family: var(--font-display); font-weight: 900; font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.8rem);
       text-transform: uppercase; line-height: 1.05; margin-bottom: 24px; color: var(--white);
     }
     .contact-info > p { color: var(--gray-mid); margin-bottom: 32px; font-size: 0.98rem; }
@@ -368,7 +387,7 @@
   <header class="site-header">
     <img src="../assets/logo transparent background.png" alt="Laser Level Dirt Works" class="header-logo" />
     <div class="header-center">
-      <span class="header-label">Free Estimates — Call Now</span>
+      <span class="header-label">Free Estimates</span>
       <a href="tel:4792231168" class="header-phone">(479) 223-1168</a>
     </div>
   </header>
@@ -384,7 +403,7 @@
       <h1>Precision <em>Dirt Work</em><br />&amp; Grading</h1>
       <p class="hero-sub">Laser-guided grading, building pads, gravel driveways, drainage, and quality fill dirt — done level, done right, done clean. Taking precision to the next level.</p>
       <div class="hero-ctas">
-        <a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a>
+        <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
         <a href="#quote" class="btn-secondary">Get a Free Estimate</a>
       </div>
     </div>
@@ -418,7 +437,7 @@
           <li>Tighter tolerances than eyeballed, old-school dirt work</li>
           <li>The owner runs the equipment on every job</li>
         </ul>
-        <div><a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a></div>
+        <div><a href="tel:4792231168" class="btn-primary">(479) 223-1168</a></div>
       </div>
     </div>
   </div>
@@ -432,44 +451,92 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">📐</div>
-          <h3>GPS &amp; Laser Grading</h3>
-          <p>Precision grading and leveling to exact slopes and elevations using state-of-the-art laser-guided equipment.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/gps-grading.jpg" alt="Laser-guided grading with skid steer and survey laser" />
+            <div class="service-icon">📐</div>
+          </div>
+          <div class="service-body">
+            <h3>GPS &amp; Laser Grading</h3>
+            <p>Precision grading and leveling to exact slopes and elevations using laser and GPS-guided equipment. It's the core of what we do: dead-level pads, perfectly pitched lots, and surfaces that shed water instead of holding it.</p>
+            <div class="service-tags"><span class="service-tag">Laser-Guided</span><span class="service-tag">Dead Level</span><span class="service-tag">Exact Slopes</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🏗️</div>
-          <h3>Building Pads</h3>
-          <p>Level, compacted pads for homes, shops, barns, and metal buildings — built to spec and ready to build on.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/building-pads.jpg" alt="Graded and compacted building pad" />
+            <div class="service-icon">🏗️</div>
+          </div>
+          <div class="service-body">
+            <h3>Building Pads</h3>
+            <p>Level, compacted pads for homes, shops, barns, and metal buildings — built to your specs and set with laser guidance. Correct elevation and slope mean your pad drains right and your structure sits true from day one.</p>
+            <div class="service-tags"><span class="service-tag">Homes &amp; Shops</span><span class="service-tag">Metal Buildings</span><span class="service-tag">Built to Spec</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🛣️</div>
-          <h3>Gravel Driveways</h3>
-          <p>New driveways and parking areas graded, based, and topped with quality rock for a solid, all-weather surface.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/gravel-driveways.jpg" alt="Finished gravel driveway and parking area" />
+            <div class="service-icon">🛣️</div>
+          </div>
+          <div class="service-body">
+            <h3>Gravel Driveways</h3>
+            <p>New driveways and parking areas graded, based, and topped with quality crushed rock for a solid, all-weather surface. We build them to drain and hold up to trucks, equipment, and Arkansas weather year-round.</p>
+            <div class="service-tags"><span class="service-tag">New Builds</span><span class="service-tag">All-Weather</span><span class="service-tag">Parking Areas</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">💧</div>
-          <h3>Drainage Solutions</h3>
-          <p>French drains, culverts, swales, and proper grading to move water away from your home, shop, and driveway.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/drainage.jpg" alt="Drainage solution installed in a yard" />
+            <div class="service-icon">💧</div>
+          </div>
+          <div class="service-body">
+            <h3>Drainage Solutions</h3>
+            <p>French drains, culverts, swales, and corrective grading that move water away from your home, shop, and driveway. We find where water is pooling or running wrong and re-shape the ground so it drains the way it should.</p>
+            <div class="service-tags"><span class="service-tag">French Drains</span><span class="service-tag">Culverts</span><span class="service-tag">Swales</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🪨</div>
-          <h3>Shale &amp; Fill Dirt</h3>
-          <p>Quality fill dirt and shale delivered and placed to build up low spots, level lots, and create stable ground.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/shale-fill.jpg" alt="Fill dirt and shale being hauled and placed" />
+            <div class="service-icon">🪨</div>
+          </div>
+          <div class="service-body">
+            <h3>Shale &amp; Fill Dirt</h3>
+            <p>Quality fill dirt and shale delivered and placed to build up low spots, raise pads, and level lots. We haul in the right material for the job and compact it in lifts so you get stable, buildable ground — not a soft pile.</p>
+            <div class="service-tags"><span class="service-tag">Delivered</span><span class="service-tag">Low Spots</span><span class="service-tag">Compacted</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🧱</div>
-          <h3>Crushed Rock Products</h3>
-          <p>Crushed rock and aggregate supplied and spread for driveways, pads, and base material of every size.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/crushed-rock.jpg" alt="Crushed rock delivered and poured" />
+            <div class="service-icon">🧱</div>
+          </div>
+          <div class="service-body">
+            <h3>Crushed Rock Products</h3>
+            <p>Crushed rock and aggregate supplied and spread for driveways, pads, and base material in every size you need. Whether it's base rock, surface gravel, or drainage stone, we bring it in and place it where it goes.</p>
+            <div class="service-tags"><span class="service-tag">Base Rock</span><span class="service-tag">Surface Gravel</span><span class="service-tag">Delivered</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🌾</div>
-          <h3>Lot Leveling &amp; Final Grade</h3>
-          <p>Smoothing, shaping, and final-grading yards and lots so they drain right and look clean and finished.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/land-clearing.jpg" alt="Finish-graded, leveled lot" />
+            <div class="service-icon">🌾</div>
+          </div>
+          <div class="service-body">
+            <h3>Lot Leveling &amp; Final Grade</h3>
+            <p>Smoothing, shaping, and final-grading yards and lots so they drain correctly and look clean and finished. This is the last pass that turns a rough site into a tidy, level surface ready for grass, gravel, or concrete.</p>
+            <div class="service-tags"><span class="service-tag">Final Pass</span><span class="service-tag">Yards &amp; Lots</span><span class="service-tag">Clean Finish</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🌧️</div>
-          <h3>Erosion Control</h3>
-          <p>Grading and measures that keep soil in place and protect your property from washouts and runoff damage.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/demo-after.jpg" alt="Graded, cleared site protected from erosion" />
+            <div class="service-icon">🌧️</div>
+          </div>
+          <div class="service-body">
+            <h3>Erosion Control</h3>
+            <p>Grading and erosion measures that keep soil in place and protect your property from washouts and runoff damage. We shape slopes and route water so your dirt work holds up through every heavy rain.</p>
+            <div class="service-tags"><span class="service-tag">Runoff</span><span class="service-tag">Washouts</span><span class="service-tag">Slope Stability</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -606,7 +673,7 @@
               <span class="contact-line-value">Monday – Friday: 8:00am – 5:00pm<br />Saturday – Sunday: Closed</span>
             </div>
           </div>
-          <a href="tel:4792231168" class="btn-primary">Call Now — Free Estimate</a>
+          <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
         </div>
 
         <div class="quote-form">
@@ -686,7 +753,7 @@
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-cta-bar">
-    <a href="tel:4792231168">Call Now — Free Estimate: (479) 223-1168</a>
+    <a href="tel:4792231168">(479) 223-1168</a>
   </div>
 
 </body>

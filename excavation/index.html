@@ -30,8 +30,8 @@
       --dark:       #111111;
       --dark-mid:   #1c1c1c;
       --dark-steel: #2a2a2a;
-      --brand:      #b71c22;
-      --brand-dark: #8c3135;
+      --brand:      #872B33;
+      --brand-dark: #5f1e24;
       --gray-light: #f4f4f4;
       --gray-mid:   #b8bec6;
       --white:      #ffffff;
@@ -94,11 +94,11 @@
     }
     .hero-eyebrow {
       font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
-      letter-spacing: 0.2em; text-transform: uppercase; color: #ff5a5f; margin-bottom: 16px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #c07680; margin-bottom: 16px;
     }
     .hero h1 {
-      font-family: var(--font-display); font-weight: 900;
-      font-size: clamp(2.4rem, 6vw, 5rem); line-height: 0.98; color: var(--white);
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.0; color: var(--white);
       text-transform: uppercase; letter-spacing: 0.005em; margin-bottom: 20px;
     }
     .hero h1 em { font-style: normal; color: var(--brand); }
@@ -131,7 +131,7 @@
       letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px;
     }
     .section-title {
-      font-family: var(--font-display); font-weight: 900; font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 3rem);
       line-height: 1.05; text-transform: uppercase; color: var(--dark);
     }
     .section-title.light { color: var(--white); }
@@ -149,21 +149,40 @@
     /* ─── SERVICES ─── */
     .services { background: var(--gray-light); }
     .services-header { margin-bottom: 48px; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
     .service-card {
-      background: var(--white); padding: 32px 28px; border-top: 4px solid transparent;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; position: relative;
+      background: var(--white); border-radius: 8px; overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s; position: relative;
     }
-    .service-card:hover {
-      border-top-color: var(--brand); transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12); z-index: 1;
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 46px rgba(0,0,0,0.16); z-index: 1; }
+    .service-thumb { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #ddd; }
+    .service-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .service-card:hover .service-thumb img { transform: scale(1.06); }
+    .service-thumb::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(17,17,17,0.38), rgba(17,17,17,0) 55%);
     }
-    .service-icon { font-size: 2rem; margin-bottom: 14px; }
+    .service-icon {
+      position: absolute; left: 16px; bottom: 14px; z-index: 2;
+      width: 46px; height: 46px; border-radius: 8px;
+      background: var(--brand); font-size: 1.45rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.28);
+    }
+    .service-body { padding: 26px 26px 30px; display: flex; flex-direction: column; gap: 12px; }
     .service-card h3 {
-      font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;
-      text-transform: uppercase; letter-spacing: 0.04em; color: var(--dark); margin-bottom: 10px;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.38rem;
+      text-transform: uppercase; letter-spacing: 0.03em; color: var(--dark); line-height: 1.05;
     }
-    .service-card p { font-size: 0.92rem; color: #555; line-height: 1.55; }
+    .service-card p { font-size: 0.96rem; color: #555; line-height: 1.6; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 2px; }
+    .service-tag {
+      font-family: var(--font-display); font-weight: 600; font-size: 0.72rem;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-dark);
+      background: rgba(135,43,51,0.09); padding: 4px 10px; border-radius: 3px;
+    }
 
     /* ─── FEATURE SPLIT ─── */
     .feature-split { padding: 0; background: var(--dark); }
@@ -172,7 +191,7 @@
     .feature-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .feature-info { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
     .feature-info h2 {
-      font-family: var(--font-display); font-weight: 900; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       text-transform: uppercase; line-height: 1.05; color: var(--white);
     }
     .feature-info p { font-size: 0.97rem; color: var(--gray-mid); line-height: 1.7; }
@@ -231,7 +250,7 @@
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .contact-info { color: var(--white); }
     .contact-info h2 {
-      font-family: var(--font-display); font-weight: 900; font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.8rem);
       text-transform: uppercase; line-height: 1.05; margin-bottom: 24px; color: var(--white);
     }
     .contact-info > p { color: var(--gray-mid); margin-bottom: 32px; font-size: 0.98rem; }
@@ -350,7 +369,7 @@
   <header class="site-header">
     <img src="../assets/logo transparent background.png" alt="Laser Level Dirt Works" class="header-logo" />
     <div class="header-center">
-      <span class="header-label">Free Estimates — Call Now</span>
+      <span class="header-label">Free Estimates</span>
       <a href="tel:4792231168" class="header-phone">(479) 223-1168</a>
     </div>
   </header>
@@ -365,7 +384,7 @@
       <h1>Expert <em>Excavation</em> &amp;<br />Site Preparation</h1>
       <p class="hero-sub">From land clearing and undercut to building pads and precision grading — we dig, haul, and prep your site right the first time. Owner-operated. Laser-guided. Cleanup included.</p>
       <div class="hero-ctas">
-        <a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a>
+        <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
         <a href="#quote" class="btn-secondary">Get a Free Estimate</a>
       </div>
     </div>
@@ -392,44 +411,92 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">⛏️</div>
-          <h3>Site Excavation</h3>
-          <p>Cut, fill, and dig work for foundations, footings, basements, ponds, and new construction — shaped exactly to your plans.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/shale-fill.jpg" alt="CAT excavator digging and loading a dump truck" />
+            <div class="service-icon">⛏️</div>
+          </div>
+          <div class="service-body">
+            <h3>Site Excavation</h3>
+            <p>Precise cut-and-fill and digging for foundations, footings, basements, ponds, and utility lines. We shape the earth exactly to your plans with modern CAT excavators, so the next phase of your build starts on solid, accurate ground.</p>
+            <div class="service-tags"><span class="service-tag">Foundations</span><span class="service-tag">Ponds</span><span class="service-tag">Utilities</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🌲</div>
-          <h3>Land Clearing</h3>
-          <p>Trees, brush, stumps, and overgrowth removed to open up your lot and get raw land ready for whatever you're building.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/land-clearing.jpg" alt="Freshly cleared wooded lot" />
+            <div class="service-icon">🌲</div>
+          </div>
+          <div class="service-body">
+            <h3>Land Clearing</h3>
+            <p>Trees, brush, stumps, and heavy overgrowth removed to open up raw land. We clear lots for homes, shops, pastures, and new construction — then grade the surface so it's clean, usable, and ready for the next step.</p>
+            <div class="service-tags"><span class="service-tag">Trees &amp; Stumps</span><span class="service-tag">Brush</span><span class="service-tag">Lot Prep</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🚛</div>
-          <h3>Undercut &amp; Haul Off</h3>
-          <p>Removing unsuitable soil and hauling it off site, then bringing in and compacting solid fill for a stable base.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/undercut-haul.jpg" alt="Undercut and haul off with dozer and dump truck" />
+            <div class="service-icon">🚛</div>
+          </div>
+          <div class="service-body">
+            <h3>Undercut &amp; Haul Off</h3>
+            <p>When the existing soil won't hold, we dig out the bad material, haul it off site, and bring in solid fill that we compact in lifts. The result is a stable base that won't settle, crack, or fail under what you build on top.</p>
+            <div class="service-tags"><span class="service-tag">Bad Soil Removal</span><span class="service-tag">Trucking</span><span class="service-tag">Compacted Fill</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🏗️</div>
-          <h3>Building Pads</h3>
-          <p>Excavated, leveled, and compacted pads for homes, shops, and metal buildings — built to spec and ready to build on.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/building-pads.jpg" alt="Graded and compacted building pad" />
+            <div class="service-icon">🏗️</div>
+          </div>
+          <div class="service-body">
+            <h3>Building Pads</h3>
+            <p>Excavated, leveled, and compacted pads built to spec for homes, shops, barns, and metal buildings. We set the elevation and slope with laser guidance so your pad drains correctly and your structure sits dead level.</p>
+            <div class="service-tags"><span class="service-tag">Homes &amp; Shops</span><span class="service-tag">Metal Buildings</span><span class="service-tag">Built to Spec</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">📐</div>
-          <h3>GPS &amp; Laser Grading</h3>
-          <p>State-of-the-art laser-guided grading for precise slopes and elevations — no guesswork, no costly re-work.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/gps-grading.jpg" alt="Skid steer with laser-guided grading attachment" />
+            <div class="service-icon">📐</div>
+          </div>
+          <div class="service-body">
+            <h3>GPS &amp; Laser Grading</h3>
+            <p>State-of-the-art laser and GPS-guided grading for exact slopes and elevations. This is where our name comes from — precision that prevents standing water, failed pads, and the costly re-work that comes from eyeballed dirt work.</p>
+            <div class="service-tags"><span class="service-tag">Laser-Guided</span><span class="service-tag">Exact Slopes</span><span class="service-tag">Drainage</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🌧️</div>
-          <h3>Erosion Control</h3>
-          <p>Protect your investment with proper grading, drainage, and erosion measures that keep soil where it belongs.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/drainage.jpg" alt="Drainage and erosion control work" />
+            <div class="service-icon">🌧️</div>
+          </div>
+          <div class="service-body">
+            <h3>Erosion Control</h3>
+            <p>Protect your investment with proper grading, drainage routing, and erosion measures that keep soil where it belongs. We stop washouts, runoff damage, and the slow loss of your graded surfaces after every heavy rain.</p>
+            <div class="service-tags"><span class="service-tag">Drainage</span><span class="service-tag">Runoff</span><span class="service-tag">Slope Stability</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🏚️</div>
-          <h3>Demolition &amp; Removal</h3>
-          <p>Structure removal and demolition to clear the way for new construction — debris hauled off and site left clean.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/demo-before.jpg" alt="Structure ready for demolition" />
+            <div class="service-icon">🏚️</div>
+          </div>
+          <div class="service-body">
+            <h3>Demolition &amp; Removal</h3>
+            <p>Full structure removal and demolition to clear the way for new construction or expansion. We take down what's in the way, work carefully around what stays, and haul every bit of debris off so the site is left clean.</p>
+            <div class="service-tags"><span class="service-tag">Structures</span><span class="service-tag">Concrete</span><span class="service-tag">Debris Haul</span></div>
+          </div>
         </div>
         <div class="service-card">
-          <div class="service-icon">🚜</div>
-          <h3>Full Site Prep</h3>
-          <p>Everything before the concrete truck arrives — clearing, digging, grading, and compaction, handled by one crew.</p>
+          <div class="service-thumb">
+            <img src="../assets/site/gravel-driveways.jpg" alt="Finished, graded site with gravel" />
+            <div class="service-icon">🚜</div>
+          </div>
+          <div class="service-body">
+            <h3>Full Site Prep</h3>
+            <p>Everything that happens before the concrete truck shows up — clearing, excavation, hauling, grading, and compaction — handled start to finish by one owner-operated crew. One point of contact, one accountable team, one clean handoff.</p>
+            <div class="service-tags"><span class="service-tag">Turnkey</span><span class="service-tag">One Crew</span><span class="service-tag">Build-Ready</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -451,7 +518,7 @@
           <li>Spoil and debris hauled away — your site left clean, always</li>
           <li>Over a decade of excavation experience across the River Valley</li>
         </ul>
-        <div><a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a></div>
+        <div><a href="tel:4792231168" class="btn-primary">(479) 223-1168</a></div>
       </div>
     </div>
   </div>
@@ -586,7 +653,7 @@
               <span class="contact-line-value">Monday – Friday: 8:00am – 5:00pm<br />Saturday – Sunday: Closed</span>
             </div>
           </div>
-          <a href="tel:4792231168" class="btn-primary">Call Now — Free Estimate</a>
+          <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
         </div>
 
         <div class="quote-form">
@@ -666,7 +733,7 @@
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-cta-bar">
-    <a href="tel:4792231168">Call Now — Free Estimate: (479) 223-1168</a>
+    <a href="tel:4792231168">(479) 223-1168</a>
   </div>
 
 </body>
