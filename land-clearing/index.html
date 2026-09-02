@@ -263,6 +263,17 @@
     .areas-note { margin-top: 24px; font-size: 0.9rem; color: #666; }
 
     /* ─── CONTACT ─── */
+    /* ─── FAQ ─── */
+    .faq { background: var(--gray-light); }
+    .faq-header { margin-bottom: 32px; }
+    .faq-list { max-width: 820px; }
+    .faq-item { background: var(--white); border: 1px solid #e3e3e3; border-radius: 4px; margin-bottom: 10px; }
+    .faq-item summary { cursor: pointer; list-style: none; padding: 18px 20px; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; color: var(--dark); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--brand); font-weight: 900; font-size: 1.4rem; line-height: 1; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 20px 18px; margin: 0; color: #444; line-height: 1.65; font-family: var(--font-body); }
+
     .contact { background: var(--dark-mid); }
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .contact-info { color: var(--white); }
@@ -653,6 +664,38 @@
   </section>
 
   <!-- CONTACT / QUOTE FORM -->
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <p class="section-label">Common Questions</p>
+        <h2 class="section-title">Land Clearing Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much does land clearing cost?</summary>
+          <p>It depends on the acreage, how thick the brush is, and how much debris has to be hauled off. Estimates are free — the owner walks the property with you and gives you a written quote before any work starts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What do you clear?</summary>
+          <p>Brush, undergrowth, thickets, small trees, and debris — cleared clean and hauled off, no burn piles left behind. Large tree removal and stump grinding aren't services we offer.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What's the land like when you're done?</summary>
+          <p>Cleared, hauled off, and finish-graded with laser-guided equipment so it drains right and is ready to build on or use.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does it take?</summary>
+          <p>That depends on the acreage and what's on it. You'll get a timeline along with your written quote at the estimate.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens after I call or submit the form?</summary>
+          <p>You'll talk directly with the owner. We set up a free on-site estimate, you get a written quote, and you decide — no obligation, no pressure.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="quote">
     <div class="container">
       <div class="contact-inner">
@@ -670,7 +713,7 @@
             </div>
             <div class="contact-line">
               <span class="contact-line-label">Hours</span>
-              <span class="contact-line-value">Monday – Friday: 8:00am – 5:00pm<br />Saturday – Sunday: Closed</span>
+              <span class="contact-line-value">Monday – Saturday: 7:00am – 7:00pm<br />Sunday: Closed</span>
             </div>
           </div>
           <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
@@ -752,7 +795,7 @@
     <div class="footer-info">
       <strong>Laser Level Dirt Works</strong> — owner-operated excavation, dirt work, land clearing &amp; demolition contractor<br />
       2810 S Arkansas Ave, Russellville, AR 72802<br />
-      Mon – Fri: 8:00am – 5:00pm &nbsp;|&nbsp; Sat – Sun: Closed
+      Mon – Sat: 7:00am – 7:00pm &nbsp;|&nbsp; Sun: Closed
     </div>
     <a class="footer-phone" href="tel:4792231168">(479) 223-1168</a>
     <div class="footer-copy">&copy; 2025 Laser Level Dirt Works. All rights reserved.</div>

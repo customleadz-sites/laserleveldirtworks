@@ -246,6 +246,17 @@
     .areas-note { margin-top: 24px; font-size: 0.9rem; color: #666; }
 
     /* ─── CONTACT ─── */
+    /* ─── FAQ ─── */
+    .faq { background: var(--gray-light); }
+    .faq-header { margin-bottom: 32px; }
+    .faq-list { max-width: 820px; }
+    .faq-item { background: var(--white); border: 1px solid #e3e3e3; border-radius: 4px; margin-bottom: 10px; }
+    .faq-item summary { cursor: pointer; list-style: none; padding: 18px 20px; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; color: var(--dark); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; color: var(--brand); font-weight: 900; font-size: 1.4rem; line-height: 1; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-item p { padding: 0 20px 18px; margin: 0; color: #444; line-height: 1.65; font-family: var(--font-body); }
+
     .contact { background: var(--dark-mid); }
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .contact-info { color: var(--white); }
@@ -633,6 +644,38 @@
   </section>
 
   <!-- CONTACT / QUOTE FORM -->
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <p class="section-label">Common Questions</p>
+        <h2 class="section-title">Excavation Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much does excavation cost?</summary>
+          <p>It depends on the depth and amount of cut, what's in the ground (soil vs. rock), site access, and how much spoil has to be hauled off. Estimates are free — the owner looks at the site and gives you a written quote before any work starts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What's included?</summary>
+          <p>The excavation itself, laser-guided grading to plan, haul-off of spoil and debris, and cleanup. The site is left ready for the next trade.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you do residential and commercial work?</summary>
+          <p>Both. Homesites, building pads, and residential site prep as well as commercial site preparation across the River Valley.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How accurate is the grading?</summary>
+          <p>We run laser-guided equipment, so pads and grades are cut to plan and drain the way they're supposed to — not eyeballed.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens after I call or submit the form?</summary>
+          <p>You'll talk directly with the owner. We set up a free on-site estimate, you get a written quote, and you decide — no obligation, no pressure.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="contact" id="quote">
     <div class="container">
       <div class="contact-inner">
@@ -650,7 +693,7 @@
             </div>
             <div class="contact-line">
               <span class="contact-line-label">Hours</span>
-              <span class="contact-line-value">Monday – Friday: 8:00am – 5:00pm<br />Saturday – Sunday: Closed</span>
+              <span class="contact-line-value">Monday – Saturday: 7:00am – 7:00pm<br />Sunday: Closed</span>
             </div>
           </div>
           <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
@@ -733,7 +776,7 @@
     <div class="footer-info">
       <strong>Laser Level Dirt Works</strong> — owner-operated excavation, dirt work, land clearing &amp; demolition contractor<br />
       2810 S Arkansas Ave, Russellville, AR 72802<br />
-      Mon – Fri: 8:00am – 5:00pm &nbsp;|&nbsp; Sat – Sun: Closed
+      Mon – Sat: 7:00am – 7:00pm &nbsp;|&nbsp; Sun: Closed
     </div>
     <a class="footer-phone" href="tel:4792231168">(479) 223-1168</a>
     <div class="footer-copy">&copy; 2025 Laser Level Dirt Works. All rights reserved.</div>
