@@ -1071,7 +1071,13 @@
         <div class="quote-form">
           <h3>Request a Quote</h3>
           <p>We'll respond within one business day.</p>
-          <form>
+          <form id="quoteForm" novalidate>
+            <!-- Web3Forms: swap e20b56ee-e6eb-40f3-9d0c-47a73e6e3736 for Ivan's key (Laserleveldirtworks@gmail.com) -->
+            <input type="hidden" name="access_key" value="e20b56ee-e6eb-40f3-9d0c-47a73e6e3736" />
+            <input type="hidden" name="subject" value="New quote request — Demolition (home) page (Google Ads)" />
+            <input type="hidden" name="from_name" value="Laser Level Dirt Works website" />
+            <input type="hidden" name="landing_page" value="Demolition (home)" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="form-group">
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -1164,5 +1170,36 @@
     <a href="tel:4792231168">Call Now — Free Estimate: (479) 223-1168</a>
   </div>
 
+
+  <!-- QUOTE FORM → Web3Forms (AJAX) + Google Ads form conversion -->
+  <script>
+    (function () {
+      const form = document.getElementById('quoteForm');
+      if (!form) return;
+      const btn = form.querySelector('.form-submit');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        btn.disabled = true; btn.textContent = 'Sending...';
+        try {
+          const body = JSON.stringify(Object.fromEntries(new FormData(form)));
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body
+          });
+          const data = await res.json();
+          if (!data.success) throw new Error(data.message || 'send failed');
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', { 'send_to': 'AW-11509853415/-pz8CPa39uwcEOfZqfAq' });
+          }
+          form.innerHTML = '<div class="form-thanks"><h3 style="margin:0 0 8px">Thanks — we got it.</h3><p style="margin:0">We\'ll call you within one business day. Need us sooner? <a href="tel:4792231168">Call (479) 223-1168</a>.</p></div>';
+        } catch (err) {
+          btn.disabled = false; btn.textContent = 'Submit — Get My Free Estimate';
+          let msg = form.querySelector('.form-error');
+          if (!msg) { msg = document.createElement('p'); msg.className = 'form-error'; msg.style.cssText = 'color:#b00020;margin-top:10px'; form.appendChild(msg); }
+          msg.innerHTML = 'Something went wrong sending the form. Please <a href="tel:4792231168">call (479) 223-1168</a> instead.';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
