@@ -1,2 +1,6 @@
 .DS_Store
 info/
+
+# client business files — never push to the public site repo
+google-ads/
+info/

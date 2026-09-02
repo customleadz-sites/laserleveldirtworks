@@ -20,9 +20,9 @@
     });
   </script>
 
+  <link rel="preload" as="image" href="assets/hero-demolition-poster.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -845,9 +845,9 @@
 
   <!-- SITE HEADER -->
   <header class="site-header">
-    <img src="assets/logo transparent background.png" alt="Laser Level Dirt Works" class="header-logo" />
+    <img width="600" height="400" src="assets/logo transparent background.webp" alt="Laser Level Dirt Works" class="header-logo" />
     <div class="header-center">
-      <span class="header-label">Free Estimates — Call Now</span>
+      <span class="header-label">Free Estimates</span>
       <a href="tel:4792231168" class="header-phone">(479) 223-1168</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -865,18 +865,17 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="assets/LL Clips Clip 59.mov" type="video/mp4" />
-      <source src="assets/LL Clips Clip 9.mov" type="video/mp4" />
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-demolition-poster.webp">
+      <source src="assets/hero-demolition.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-texture"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Arkansas River Valley's Trusted Demolition Contractor</p>
       <h1>Expert <em>Demolition</em><br />River Valley, AR</h1>
-      <p class="hero-sub">Safe, efficient commercial and residential demolition with concrete breaking, debris removal, and full site cleanup.</p>
+      <p class="hero-sub">Safe, efficient house, residential and commercial demolition — concrete breaking, mobile home and pool removal, debris haul-off, and full site cleanup. Licensed &amp; insured, owner operated.</p>
       <div class="hero-ctas">
-        <a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a>
+        <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
         <a href="#quote" class="btn-secondary">Get a Free Estimate</a>
       </div>
     </div>
@@ -910,7 +909,12 @@
         <div class="service-card">
           <div class="service-icon">🏠</div>
           <h3>Residential Demolition</h3>
-          <p>Safe removal of homes, garages, outbuildings, and structures — whether clearing a lot or making way for new construction.</p>
+          <p>House demolition and safe removal of homes, garages, outbuildings, and structures — whether clearing a lot or making way for new construction.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏊</div>
+          <h3>Mobile Home &amp; Pool Removal</h3>
+          <p>Old mobile homes torn down and hauled off. In-ground and above-ground pools demolished, filled, and graded level — ready for whatever comes next.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🔨</div>
@@ -945,7 +949,7 @@
   <div class="feature-split">
     <div class="feature-split-inner">
       <div class="feature-photo">
-        <img
+        <img loading="lazy"
           src="https://images.unsplash.com/photo-1616551569669-b60598758c4f?auto=format&fit=crop&w=900&q=80"
           alt="Excavator on demolition site"
         />
@@ -961,7 +965,7 @@
           <li>Over a decade of experience in the River Valley</li>
         </ul>
         <div>
-          <a href="tel:4792231168" class="btn-primary">Call (479) 223-1168</a>
+          <a href="tel:4792231168" class="btn-primary">(479) 223-1168</a>
         </div>
       </div>
     </div>
@@ -1065,7 +1069,7 @@
               <span class="contact-line-value">Monday – Friday: 8:00am – 5:00pm<br />Saturday – Sunday: Closed</span>
             </div>
           </div>
-          <a href="tel:4792231168" class="btn-primary">Call Now — Free Estimate</a>
+          <a href="tel:4792231168" class="btn-primary">(479) 223-1168 — Free Estimate</a>
         </div>
 
         <div class="quote-form">
@@ -1074,7 +1078,8 @@
           <form id="quoteForm" novalidate>
             <!-- Web3Forms: swap e20b56ee-e6eb-40f3-9d0c-47a73e6e3736 for Ivan's key (Laserleveldirtworks@gmail.com) -->
             <input type="hidden" name="access_key" value="e20b56ee-e6eb-40f3-9d0c-47a73e6e3736" />
-            <input type="hidden" name="subject" value="New quote request — Demolition (home) page (Google Ads)" />
+            <input type="hidden" name="subject" value="New quote request — Demolition (home) page" />
+            <input type="hidden" name="lead_source" value="Website (not from an ad)" />
             <input type="hidden" name="from_name" value="Laser Level Dirt Works website" />
             <input type="hidden" name="landing_page" value="Demolition (home)" />
             <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
@@ -1099,6 +1104,8 @@
                 <option>Concrete Breaking</option>
                 <option>Structure Removal</option>
                 <option>Debris Removal &amp; Cleanup</option>
+                <option>Mobile Home Removal</option>
+                <option>Pool Removal</option>
                 <option>Other / Not Sure</option>
               </select>
             </div>
@@ -1122,13 +1129,13 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="assets/photo 1.png" alt="Laser Level Dirt Works project" />
+          <img loading="lazy" width="1000" height="864" src="assets/photo 1.webp" alt="Laser Level Dirt Works project" />
         </div>
         <div class="gallery-item">
-          <img src="assets/photo 2.png" alt="Laser Level Dirt Works project" />
+          <img loading="lazy" width="1000" height="856" src="assets/photo 2.webp" alt="Laser Level Dirt Works project" />
         </div>
         <div class="gallery-item">
-          <img src="assets/photo 3.png" alt="Laser Level Dirt Works project" />
+          <img loading="lazy" width="1000" height="858" src="assets/photo 3.webp" alt="Laser Level Dirt Works project" />
         </div>
       </div>
     </div>
@@ -1136,8 +1143,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="assets/logo transparent background.png" alt="Laser Level Dirt Works" class="footer-logo" />
+    <img loading="lazy" width="600" height="400" src="assets/logo transparent background.webp" alt="Laser Level Dirt Works" class="footer-logo" />
     <div class="footer-info">
+      <strong>Laser Level Dirt Works</strong> — owner-operated excavation, dirt work, land clearing &amp; demolition contractor<br />
       2810 S Arkansas Ave, Russellville, AR 72802<br />
       Mon – Fri: 8:00am – 5:00pm &nbsp;|&nbsp; Sat – Sun: Closed
     </div>
@@ -1167,7 +1175,7 @@
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-cta-bar">
-    <a href="tel:4792231168">Call Now — Free Estimate: (479) 223-1168</a>
+    <a href="tel:4792231168">(479) 223-1168 — Free Estimate</a>
   </div>
 
 
@@ -1177,6 +1185,18 @@
       const form = document.getElementById('quoteForm');
       if (!form) return;
       const btn = form.querySelector('.form-submit');
+      // Tag the lead with where it came from. Google Ads auto-tagging adds ?gclid=... to ad clicks;
+      // remember it for the session so the form still knows even after they browse to another page.
+      try {
+        const q = new URLSearchParams(location.search);
+        if (q.has('gclid') || q.get('utm_source') === 'google') sessionStorage.setItem('lld_src', 'Google Ads');
+        const src = sessionStorage.getItem('lld_src');
+        if (src) {
+          form.querySelector('[name=lead_source]').value = src;
+          const subj = form.querySelector('[name=subject]');
+          subj.value = subj.value + ' — from ' + src;
+        }
+      } catch (e) {}
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!form.reportValidity()) return;
@@ -1201,5 +1221,6 @@
       });
     })();
   </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&display=swap" />
 </body>
 </html>
